@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias dot_config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dot_git='$(which git) --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 # From the arch wiki -- personal ones
 autoload -Uz compinit promptinit
 compinit
