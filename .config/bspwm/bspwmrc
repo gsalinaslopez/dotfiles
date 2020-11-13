@@ -47,5 +47,4 @@ bspc config right_padding 5
 
 $HOME/.config/polybar/launch.sh &
 
-compton -Ccb
-feh --bg-fill ~/Pictures/Wallpaper/wallhaven-4gq6yd.jpg
+feh --bg-fill $HOME/.wallpapers/mountains_peaks_snow.jpg
