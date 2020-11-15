@@ -18,11 +18,11 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #000000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
+foreground-alt = #FFF
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -30,19 +30,19 @@ alert = #bd2c40
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 50
 ;offset-x = 1%
-;offset-y = 1%
-radius = 6.0
-fixed-center = false
+offset-y = 2
+radius = 3.0
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 1
 line-color = #f00
 
-border-size = 4
+border-size = 0
 border-color = #00000000
 
 padding-left = 0
@@ -51,13 +51,15 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = misc fixed:pixelsize=10;1
+;font-0 = misc fixed:pixelsize=10;1
+font-0 = "GohuFont Nerd Font:pixelsize=24;1"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
-modules-center = mpd
-modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu battery temperature date powermenu
+modules-center = xwindow
+modules-right = date
+;modules-right = date
 
 tray-position = right
 tray-padding = 2
@@ -80,6 +82,7 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+;label = %title%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -112,7 +115,6 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -260,7 +262,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date =
+date = " %a %b %d"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
@@ -268,19 +270,39 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
 
 label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = 
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+;format-volume = <label-volume> <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+;label-muted = 🔇 muted
+;label-muted-foreground = #666
+format-muted-prefix = 
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
