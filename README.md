@@ -9,7 +9,7 @@ alias dot_git='$(which git) --git-dir=$HOME/dotfiles.git --work-tree=$HOME'
 
 echo "dotfiles.git" >> .gitignore
 
-git clone --bare https://github.com/gsalinaslopez/dotfiles.git
+git clone --bare --recurse-submodules https://github.com/gsalinaslopez/dotfiles.git
 
 dot_git config --local status.showUntrackedFiles no
 
