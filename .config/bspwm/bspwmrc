@@ -1,34 +1,10 @@
 #! /bin/sh
 
-sxhkd &
+pgrep -x sxhkd > /dev/null || sxhkd &
 
-# Monitor configuration
-hdmi_connected=`xrandr | grep HDMI`
+bspc monitor -d I II III IV V VI VII VIII IX X
 
-if [ -z "$hdmi_connected" ]; then
-    echo "no hay monitor"
-else
-    hdmi_resolution=`xrandr | grep -A 1 "HDMI" | grep -oP "[0-9]+x[0-9]+\s"`
-    case "$hdmi_resolution" in 
-        "3840x2160 ")
-            `~/.screenlayout/4k_eDP.sh`
-            ;;
-        "1920x1080 ")
-            `~/.screenlayout/hd_eDP.sh`
-            ;;
-        *)
-            echo "sepa puta"
-    esac
-fi
-
-bspc monitor eDP-1-1 -d I II III IV
-bspc monitor HDMI-1-1 -d V VI VII VIII
-
-bspc config active_border_color '#5E8D87'
-bspc config normal_border_color '#707880'
-bspc config focused_border_color '#8ABEB7'
-
-bspc config border_width         4
+bspc config border_width         0
 bspc config window_gap          14
 
 bspc config split_ratio          0.52
@@ -41,10 +17,6 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-bspc config top_padding 27
-bspc config left_padding 5
-bspc config right_padding 5
-
 $HOME/.config/polybar/launch.sh &
 
-feh --bg-fill $HOME/.wallpapers/mountains_peaks_snow.jpg
+#feh --bg-fill $HOME/.wallpapers/mountains_peaks_snow.jpg

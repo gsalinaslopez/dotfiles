@@ -29,22 +29,19 @@ alert = #bd2c40
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
-MONITOR = $(polybar -m|tail -1|sed -e 's/:.*$//g')
-width = 98%
-height = 27
+width = 100%
+height = 50
 ;offset-x = 1%
-;offset-y = 1%
+offset-y = 2
 radius = 3.0
 fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-;line-size = 3
 line-size = 1
 line-color = #f00
 
-;border-size = 4
 border-size = 0
 border-color = #00000000
 
@@ -54,21 +51,21 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = "GohuFont Nerd Font:size=40"
-;font-0 = fixed:pixelsize=10;1
+;font-0 = misc fixed:pixelsize=10;1
+font-0 = "GohuFont Nerd Font:pixelsize=24;1"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
-modules-center = date
-;modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
-modules-right = volume eth
+modules-center = xwindow
+modules-right = date
+;modules-right = date
 
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
-wm-restack = bspwm
+;wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true
@@ -85,6 +82,7 @@ cursor-scroll = ns-resize
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+;label = %title%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -224,7 +222,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlo1
+interface = 
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -246,9 +244,10 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp0s20f0u1c4i2
+interface = 
 interval = 3.0
 
+format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -274,15 +273,36 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 label = %date% %time%
 
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = 
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+;format-volume = <label-volume> <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+;label-muted = 🔇 muted
+;label-muted-foreground = #666
+format-muted-prefix = 
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = muted
+
+ramp-volume-0 = 
+ramp-volume-1 = 
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
