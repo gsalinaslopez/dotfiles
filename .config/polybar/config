@@ -283,6 +283,10 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
+enable-click = false
+enable-scroll = false
+reverse-scroll = false
+
 ; format-prefix = 
 ; format-prefix-foreground = ${colors.foreground-alt}
 
@@ -319,6 +323,10 @@ label-muted = muted
 
 ramp-volume-0 = %{T3}
 ramp-volume-1 = %{T3}
+
+enable-click = false
+enable-scroll = false
+reverse-scroll = false
 
 ; bar-volume-width = 10
 ; bar-volume-foreground-0 = #55aa55

@@ -200,6 +200,9 @@ function! s:check_back_space() abort
 	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+" coc extensions auto-install
+let g:coc_global_extensions = ['coc-clangd']
+
 " pip install python-language-server
 " pip install pynvim
 
