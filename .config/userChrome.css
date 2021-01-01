@@ -1,0 +1,30 @@
+* {
+	font-family: "GohuFont Nerd Font";
+}
+
+* {
+	font-size: 14pt;
+}
+
+.button-box .button-icon {
+    display: none;
+}
+
+/* Tab bar */
+
+.tabbrowser-strip *[class^="scrollbutton"] {
+    /* Hide tab scroll buttons */
+    display: none;
+}
+
+.tabbrowser-strip *[class^="tabs-alltabs"] {
+    /* Hide tab drop-down list */
+    display: none;
+}
+
+.tabbrowser-strip *[class^="tabs-newtab-button"] {
+    /* Hide new-tab button */
+    display: none;
+}
+
+.tabbrowser-tab .tab-icon-image {display:none!important;}
