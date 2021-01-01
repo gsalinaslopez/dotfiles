@@ -22,11 +22,11 @@ call plug#begin(stdpath('data') .  '/plugged')
     Plug 'chriskempson/base16-vim'
     Plug 'ryanoasis/vim-devicons'
     Plug 'Yggdroot/indentLine'
-    
+
     "" 'IDE' related
     Plug 'dense-analysis/ale'
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Install plugins with CocInstall
-    
+
     "" Python related
     Plug 'Vimjas/vim-python-pep8-indent'
 
@@ -77,9 +77,10 @@ endif
 "" Map leader to ,
 let mapleader=','
 
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
+" let base16colorspace=256
 
-set termguicolors
+" set termguicolors
 
 set relativenumber
 
@@ -155,7 +156,8 @@ let g:airline#extensions#tagbar#enabled = 1
 "*****************************************************************************
 let g:ale_completion_enabled = 0
 let g:ale_sign_column_always = 1
-let g:ale_fixers = {'python': ['yapf'], 'reason': ['refmt']}
+let g:ale_linters = {'cpp': ['cpplint']}
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'python': ['yapf'], 'reason': ['refmt']}
 let g:ale_fix_on_save = 1
 let g:ale_reason_ols_executable = '/usr/local/bin/reason-language-server'
 let g:ale_reason_ls_executable = '/usr/local/bin/reason-language-server'
@@ -198,6 +200,9 @@ function! s:check_back_space() abort
 	let col = col('.') - 1
 	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" coc extensions auto-install
+let g:coc_global_extensions = ['coc-clangd', 'coc-markdownlint', 'coc-texlab']
 
 " pip install python-language-server
 " pip install pynvim
