@@ -202,7 +202,7 @@ function! s:check_back_space() abort
 endfunction
 
 " coc extensions auto-install
-let g:coc_global_extensions = ['coc-clangd', 'coc-markdownlint', 'coc-texlab']
+let g:coc_global_extensions = ['coc-clangd', 'coc-markdownlint', 'coc-texlab', 'coc-sourcekit']
 
 " pip install python-language-server
 " pip install pynvim

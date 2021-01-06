@@ -59,7 +59,7 @@ font-3 = "GohuFont Nerd Font Mono:pixelsize=11:style=14:antialias=false:autohint
 
 modules-left = bspwm bspwmnum
 modules-center = xwindow
-modules-right = battery pulseaudio wlan date 
+modules-right = battery pulseaudio wlan date
 
 tray-position = right
 tray-padding = 2
@@ -126,18 +126,18 @@ type = internal/bspwm
 label-focused = %{T3}
 ; label-focused = %{T3}
 ; label-focused-background = ${colors.background-alt}
-label-focused-padding = 1.5
+label-focused-padding = 2.0
 
 label-occupied = %{T3}
-label-occupied-padding = 1.5
+label-occupied-padding = 2.0
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 1.5
+label-urgent-padding = 2.0
 
 label-empty = %{T3}
 ; label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 1.5
+label-empty-padding = 2.0
 
 enable-click = false
 enable-scroll = false
@@ -259,7 +259,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = 
+interface =
 interval = 3.0
 
 format-connected-underline = #55aa55
