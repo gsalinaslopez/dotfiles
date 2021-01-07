@@ -121,6 +121,7 @@ label-empty =
 
 [module/bspwm]
 type = internal/bspwm
+module-margin = -2.5
 
 ; label-focused = %index%
 label-focused = %{T3}
