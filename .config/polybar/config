@@ -59,7 +59,7 @@ font-3 = "GohuFont Nerd Font Mono:pixelsize=11:style=14:antialias=false:autohint
 
 modules-left = bspwm bspwmnum
 modules-center = xwindow
-modules-right = battery pulseaudio wlan date
+modules-right = battery pulseaudio wlan eth_iPhone date
 
 tray-position = right
 tray-padding = 2
@@ -244,8 +244,8 @@ interval = 3.0
 format-connected = <label-connected>
 label-connected = %essid%
 
-format-disconnected = <label-disconnected>
-label-disconnected = %{T3}
+; format-disconnected = <label-disconnected>
+; label-disconnected = %{T3}
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -258,21 +258,23 @@ ramp-signal-3 = %{T3}
 ; ramp-signal-4 = %{T3}
 ramp-signal-foreground = ${colors.foreground-alt}
 
-[module/eth]
+[module/eth_iPhone]
 type = internal/network
-interface =
+interface = enp0s20f0u2c4i2
+; interface-type= wired
 interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+; format-connected-underline = #55aa55
+; format-connected-prefix = " "
+; format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+; label-disconnected = %{T3}
+; format-disconnected = <label-disconnected>
+; format-disconnected-underline = ${self.format-connected-underline}
+; label-disconnected = %ifname% disconnected
+; label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
