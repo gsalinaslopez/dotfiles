@@ -6,10 +6,10 @@ This repo contains configuration files for both my \*NIX systems. Arch Linux on 
 + **Status Bar**: [Polybar](https://github.com/polybar/polybar)
 + **Application Launcher** [dmenu](https://tools.suckless.org/dmenu/)
 + **Text Editor**: [Neovim](https://github.com/neovim/neovim/)
-+ **Font**: [Gohufont](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Gohu) (with nerd font patch)
-+ **Misc Icon Font** [Siji](https://github.com/stark/siji)
++ **Font**: [Gohufont](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Gohu) (with nerd font patch) [Siji](https://github.com/stark/siji)
 + **Terminal**: [st](https://st.suckless.org/)
 + **Shell**: [zsh](https://www.zsh.org/) with [Oh My Zsh](https://ohmyz.sh/) configuration framework and [Powerlevel10k](https://github.com/romkatv/powerlevel10k) prompt theme
++ **Misc**: [redshift](http://jonls.dk/redshift/)
 
 ## Installation
 Setup an alias so the git directory and the work tree ($HOME in this case) are separated.
