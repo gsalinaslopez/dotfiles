@@ -26,5 +26,26 @@ dot_git config --local status.showUntrackedFiles no
 dot_git checkout
 ```
 
-## Screenshots
+# Parchvilion
+
+### Clean
+
+![Clean](scrots/clean.png)
+
+### System Info (fetch)
+
+![Fetch](scrots/fetch.png)
+
+### Stats
+
+![Stats](scrots/stats.png)
+
+### Text Editing
+
+![Nvim](scrots/nvim.png)
+
+### Mandatory /r/unixporn browsing
+
+![Firefox](scrots/firefox.png)
+
 *A huge thanks to https://news.ycombinator.com/item?id=11071754 and https://www.atlassian.com/git/tutorials/dotfiles for the amazing dotfiles repo solution and tutorial, respectively*
