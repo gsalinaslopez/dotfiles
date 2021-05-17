@@ -67,4 +67,6 @@ else
     esac
 fi
 
-exec bspwm
+exec slstatus
+exec dwm
+# exec bspwm

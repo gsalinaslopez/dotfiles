@@ -4,3 +4,12 @@
 [submodule ".config/dmenu"]
 	path = .config/dmenu
 	url = https://github.com/gsalinaslopez/dmenu.git
+[submodule ".config/dwm"]
+	path = .config/dwm
+	url = https://github.com/gsalinaslopez/dwm.git
+[submodule ".config/slstatus"]
+	path = .config/slstatus
+	url = https://github.com/gsalinaslopez/slstatus.git
+[submodule ".config/slock"]
+	path = .config/slock
+	url = https://github.com/gsalinaslopez/slock.git
