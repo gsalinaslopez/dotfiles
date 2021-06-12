@@ -67,6 +67,7 @@ else
     esac
 fi
 
-exec slstatus
-exec dwm
-# exec bspwm
+/usr/bin/prime-offload &
+# slstatus &
+# exec dwm
+exec bspwm

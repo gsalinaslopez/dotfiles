@@ -6,10 +6,12 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
-bspc config border_width         0
-bspc config window_gap          14
+bspc config active_border_color \#C5C8C6
 
-bspc config split_ratio          0.52
+bspc config border_width         1
+bspc config window_gap          12
+
+bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
@@ -20,6 +22,10 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+picom -Ccb
+bspc config top_padding 27
+bspc config left_padding 5
+bspc config right_padding 5
 $HOME/.config/polybar/launch.sh &
 
-#feh --bg-fill $HOME/.wallpapers/mountains_peaks_snow.jpg
+feh --bg-fill $HOME/.wallpapers/mountains_peaks_snow.jpg

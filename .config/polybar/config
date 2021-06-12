@@ -19,7 +19,8 @@
 [colors]
 background = #000000
 background-alt = #444
-foreground = #dfdfdf
+; foreground = #dfdfdf
+foreground = #ffffff
 foreground-alt = #FFF
 primary = #ffb52a
 secondary = #e60053
@@ -27,11 +28,11 @@ alert = #bd2c40
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width = 98%
 height = 27
-;offset-x = 1%
-;offset-y = 2
-radius = 0.0
+offset-x = 1%
+offset-y = 2
+radius = 3.0
 fixed-center = true
 
 background = ${colors.background}
@@ -43,32 +44,32 @@ line-color = #f00
 border-size = 0
 border-color = #00000000
 
+; pseudo-transparency = true
+
 padding-left = 0
 padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 2
 
-;font-0 = misc fixed:pixelsize=10;1
-font-0 = "GohuFont Nerd Font:pixelsize=11;0"
+; font-0 = "Gohu GohuFont:pixelsize=14;1"
+font-0 = "Tamzen:pixelsize=20;2"
+; font-0 = "Tamzen:size=14;2.5"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=16;1
-; font-3 = "GohuFont Nerd Font:size=11:antialias=false;1"
-; font-3 = "GohuFont Nerd Font:pixelsize=11:style=14:antialias=false:autohint=true;0"
-font-3 = "GohuFont Nerd Font Mono:pixelsize=11:style=14:antialias=false:autohint=true;0"
+font-2 = "Siji:pixelsize=10;0"
 
-modules-left = bspwm bspwmnum
-modules-center = xwindow
-modules-right = battery pulseaudio wlan eth_iPhone date
+; modules-left = bspwm bspwmnum
+modules-left = bspwm
+modules-center = date
+; modules-right = battery pulseaudio wlan eth_iPhone date
+modules-right = battery volume wlan eth_iPhone
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
 
 wm-restack = bspwm
-;wm-restack = i3
 
-;override-redirect = true
+override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -123,10 +124,7 @@ label-empty =
 type = internal/bspwm
 module-margin = -2.5
 
-; label-focused = %index%
 label-focused = %{T3}
-; label-focused = %{T3}
-; label-focused-background = ${colors.background-alt}
 label-focused-padding = 2.0
 
 label-occupied = %{T3}
@@ -137,14 +135,11 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2.0
 
 label-empty = %{T3}
-; label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2.0
 
 enable-click = false
 enable-scroll = false
 reverse-scroll = false
-; Separator in between workspaces
-; label-separator = |
 
 [module/i3]
 type = internal/i3
@@ -240,41 +235,24 @@ type = internal/network
 interface = wlo1
 interval = 3.0
 
-; format-connected = <ramp-signal> <label-connected>
-format-connected = <label-connected>
+format-connected = %{T3}<ramp-signal> %{T1}<label-connected>
 label-connected = %essid%
 
-; format-disconnected = <label-disconnected>
-; label-disconnected = %{T3}
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
 ramp-signal-0 = %{T3}
-ramp-signal-1 = %{T3}
-ramp-signal-2 = %{T3}
-ramp-signal-3 = %{T3}
-; ramp-signal-4 = %{T3}
+ramp-signal-1 = %{T3}
+ramp-signal-2 = %{T3}
+ramp-signal-3 = %{T3}
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth_iPhone]
 type = internal/network
 interface = enp0s20f0u2c4i2
-; interface-type= wired
 interval = 3.0
 
-; format-connected-underline = #55aa55
-; format-connected-prefix = " "
-; format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix = " "
 label-connected = %local_ip%
 
 format-disconnected =
-; label-disconnected = %{T3}
-; format-disconnected = <label-disconnected>
-; format-disconnected-underline = ${self.format-connected-underline}
-; label-disconnected = %ifname% disconnected
-; label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -302,30 +280,26 @@ format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = %{T3}
+format-muted-prefix = 
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = muted
 
-ramp-volume-0 = %{T3}
-ramp-volume-1 = %{T3}
+ramp-volume-0 = 
+ramp-volume-1 = 
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-;format-volume = <label-volume> <bar-volume>
-; format-volume = <ramp-volume> <label-volume>
-format-volume = VOL <label-volume>
+format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%
 label-volume-foreground = ${root.foreground}
 
-;label-muted = 🔇 muted
-;label-muted-foreground = #666
-; format-muted-prefix = %{T3}
+format-muted-prefix = 
 format-muted-foreground = ${root.foreground}
 label-muted = muted
 
-ramp-volume-0 = %{T3}
-ramp-volume-1 = %{T3}
+ramp-volume-0 = 
+ramp-volume-1 = 
 
 enable-click = false
 enable-scroll = false
@@ -383,31 +357,22 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-; format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
-; format-discharging-underline = ${self.format-charging-underline}
+format-discharging = <ramp-capacity> <label-discharging>
 
-format-full-prefix = %{T3}" "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-; format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = %{T3}
-ramp-capacity-1 = %{T3}
-ramp-capacity-2 = %{T3}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = %{T3}
-animation-charging-1 = %{T3}
-animation-charging-2 = %{T3}
+animation-charging-0 = 
+; animation-charging-1 = 
+; animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
-
-animation-discharging-0 = %{T3}
-animation-discharging-1 = %{T3}
-animation-discharging-2 = %{T3}
-animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature

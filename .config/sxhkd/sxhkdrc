@@ -7,13 +7,32 @@ super + Return
 	st
 
 # program launcher
+# for querying the monitor width: xrandr -q | awk -F '[ x+]' '/\<connected\>/{print $4}'
 super + @space
-	dmenu_run
+    dmenu_run -h 27 -x 28 -y 2 -z 1310
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
+#
+# multimedia hotkeys
+#
+
+XF86MonBrightnessUp
+	xbacklight -inc 10
+
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+XF86AudioMute
+    pulsemixer --toggle-mute
+
+XF86AudioRaiseVolume
+    pulsemixer --change-volume +5
+
+XF86AudioLowerVolume
+    pulsemixer --change-volume -5
 #
 # bspwm hotkeys
 #
