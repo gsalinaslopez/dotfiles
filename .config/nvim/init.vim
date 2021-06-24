@@ -77,10 +77,10 @@ endif
 "" Map leader to ,
 let mapleader=','
 
-" colorscheme base16-default-dark
+colorscheme base16-default-dark
 " let base16colorspace=256
 
-" set termguicolors
+set termguicolors
 
 set relativenumber
 
