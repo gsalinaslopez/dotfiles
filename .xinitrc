@@ -55,7 +55,7 @@ if [ -z "$hdmi_connected" ]; then
     echo "no hay monitor"
 else
     hdmi_resolution=`xrandr | grep -A 1 "HDMI" | grep -oP "[0-9]+x[0-9]+\s"`
-    case "$hdmi_resolution" in 
+    case "$hdmi_resolution" in
         "3840x2160 ")
             `~/.screenlayout/1440p_hdmi_only.sh`
             ;;
@@ -68,6 +68,8 @@ else
 fi
 
 /usr/bin/prime-offload &
+
 # slstatus &
 # exec dwm
+# feh --bg-fill $HOME/.wallpapers/mountains_peaks_snow.jpg
 exec bspwm

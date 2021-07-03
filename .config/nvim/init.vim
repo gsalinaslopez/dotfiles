@@ -20,6 +20,7 @@ call plug#begin(stdpath('data') .  '/plugged')
 
     "" Interface related
     Plug 'chriskempson/base16-vim'
+    Plug 'metalelf0/base16-black-metal-scheme'
     Plug 'ryanoasis/vim-devicons'
     Plug 'Yggdroot/indentLine'
 
@@ -77,8 +78,9 @@ endif
 "" Map leader to ,
 let mapleader=','
 
-colorscheme base16-default-dark
 " let base16colorspace=256
+" colorscheme base16-default-dark
+colorscheme base16-black-metal
 
 set termguicolors
 
