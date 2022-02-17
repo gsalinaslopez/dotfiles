@@ -88,10 +88,10 @@ set relativenumber
 
 set colorcolumn=80
 
-:set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
-\,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-\,sm:block-blinkwait175-blinkoff150-blinkon175
-
+":set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+"\,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+"\,sm:block-blinkwait175-blinkoff150-blinkon175
+:set guicursor=n-v-c:block-Cursor/lCursor,ve:ver35-Cursor,o:hor50-Cursor,i-ci:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor,sm:block-Cursor-blinkwait175-blinkoff150-blinkon175
 "*****************************************************************************
 """ Abbreviations and Mappings
 "*****************************************************************************
